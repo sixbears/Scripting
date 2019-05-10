@@ -1,0 +1,38 @@
+#!/bin/bash
+
+echo Entrez un nombre entre 0 et 1000:
+nbalea=$RANDOM
+((nbalea=nbalea/32,765))
+tentatives=1
+
+read nbuti
+
+if [[ $var =~ ^[0-9]+$]]; then echo yes; then echo no;
+then
+echo "Ce n'est pas un nombre"
+else
+while test $nbuti -ne $nbalea
+do
+
+if test $nbuti -lt $nbalea
+then
+echo Plus
+read nbuti
+elif test $nbuti -gt $nbalea
+then
+echo Moins
+read nbuti
+fi
+
+((tentatives += 1))
+done ; echo 'Bien joué'
+
+fi
+
+if test $tentatives -eq 1
+then
+echo "Vous avez utilisé $tentatives tentative"
+elif test $tentatives -ne 1
+then
+echo "Vous avez utilisé $tentatives tentatives"
+fi
